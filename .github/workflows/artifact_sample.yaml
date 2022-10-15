@@ -1,10 +1,10 @@
-name: Create Artifact
+name: Artifact Sample
 
 on : [push]
 
 jobs: 
-  create_artifact:
-    name: Create Artifact
+  upload_artifact:
+    name: Upload artifact
     runs-on: ubuntu-latest
     steps:
     - shell: bash
@@ -15,7 +15,11 @@ jobs:
       with:
         name: sample_file.txt
         path: sample_file.txt
+  download_artifact:
+    name: Download artifact
+    runs-on: ubuntu-latest
+    steps:
     - name: Download a single artifact
       uses: actions/download-artifact@v3
       with:
-        name: sample_text.txt
+        name: sample_file.txt
