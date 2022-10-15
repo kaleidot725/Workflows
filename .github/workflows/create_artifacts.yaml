@@ -1,13 +1,17 @@
-name: First Workflow
+name: Create Artifacts
 
 on : [push]
 
 jobs: 
   create_artifacts:
-    name: Setup Java JDK
+    name: Create Artifacts
     runs-on: ubuntu-latest
     steps:
     - shell: bash
       run: | 
-        echo hello > sample.file.txt
-        
+        echo hello > sample_file.txt
+    - name: Upload output file
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: sample_file.txt
+        path: sample_file.txt
