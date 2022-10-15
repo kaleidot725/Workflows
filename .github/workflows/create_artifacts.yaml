@@ -1,0 +1,13 @@
+name: First Workflow
+
+on : [push]
+
+jobs: 
+  create_artifacts:
+    name: Setup Java JDK
+    runs-on: ubuntu-latest
+    steps:
+    - shell: bash
+      run: | 
+        echo hello > sample.file.txt
+        
