@@ -1,0 +1,14 @@
+name: Download Artifact
+
+on : [push]
+
+jobs: 
+  download_artifact:
+    name: Download artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: sample_text.txt
+          needs: create_artifact
