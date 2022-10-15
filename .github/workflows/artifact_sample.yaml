@@ -15,3 +15,7 @@ jobs:
       with:
         name: sample_file.txt
         path: sample_file.txt
+    - name: Download a single artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: sample_text.txt
