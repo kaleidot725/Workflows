@@ -9,3 +9,5 @@ jobs:
     steps:
     - uses: actions/hello-world-javascript-action@v1.1
       if: ${{ false }}
+    - uses: actions/hello-world-javascript-action@v1.1
+      if: ${{ true }}
